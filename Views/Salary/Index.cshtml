@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model IEnumerable<Salary>;
+
+    <h1>Salaries list</h1>
+<div>
+    <a asp-action="Add" class="btn btn-primary" style="color:white">Add</a>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Amount</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.Amount</td>
+                    <td>
+                        <a style="color:white" class="btn btn-success" asp-action="Update" asp-route-id="@item.SalaryId">Update</a>
+                        <a style="color:white" class="btn btn-danger" asp-action="Delete" asp-route-id="@item.SalaryId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

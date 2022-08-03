@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Update";
+}
+
+@model Salary;
+<form method="post" asp-action="Update">
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <input asp-for="SalaryId" hidden />
+            <label>Amount</label>
+            <input asp-for="Amount" class="form-control" />
+            @Html.ValidationMessageFor(x => x.Amount)
+        </div>
+        <div asp-validation-summary="ModelOnly">    
+
+        </div>
+        
+    </div>
+    <button class="btn btn-primary">Update</button>
+</form>
+
